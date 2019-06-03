@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#PBS -q parallel11
+##PBS -q batch
+
+#PBS -N neo
+
+#PBS -l nodes=2:ppn=4
+#PBS -l walltime=10:00:00
+#PBS -j oe
+##PBS -o run.log
+#cd $PBS_O_WORKDIR
+
+cd $PBS_O_WORKDIR
+
+neo -e . -n 8

@@ -1,0 +1,18 @@
+##===================================
+### input
+##==================================
+inputs=[(root['INPUTS']['input.neo'],'input.neo'),
+        (root['INPUTS']['jobneo.pbs'],'jobneo.pbs'),
+        (root['INPUTS']['monitePBSneo.sh'],'monitePBSneo.sh')
+	]
+##----------------------
+### output
+##----------------------
+outputs=['out.neo.transport']
+executable ='chmod 777 monitePBSneo.sh ; ./monitePBSneo.sh'
+ret_code=OMFITx.executable(root, inputs=inputs, outputs=outputs, executable=executable)
+#-----------------------
+# load the results
+#-----------------------
+for item in outputs:
+    root['OUTPUTS']['NEO'][item]=OMFITasciitable(item)

@@ -1,0 +1,56 @@
+ &PHYSICS
+ iMergeDT = 0
+ FracImp = 1e-09
+ MImp = 184.0
+ ZImp = 63.0
+ nscan = 6
+ alnrange = 0 1
+ n_pvt = 1.0
+ case_tag = 'neo'
+ n_theta = 35
+ /
+ &SETUP
+ mthdreaddata = 1
+ irunneo = 1
+ consflag = 'tglf' 'neo'
+ workDir = 
+ executable = 'neo -e . -n 1'
+ num_nodes = 1
+ num_cores = 24
+ wall_time = '1:00:00'
+ pbs_queue = 'batch'
+ server = 'kuafu'
+ /
+ &PLOTS
+ indradius = 12
+ iplotlincheck = 0
+ iplotpro = 1
+ /
+ &EXPERIMENT
+ shot = 
+ time = 
+ device = 
+ shots = 
+ times = 
+ runid = 
+ /
+ &REMOTE_SETUP
+ serverPicker = ''
+ workDir = '/scratch/xiangjian/OMFIT/runs/ForW/0'
+ server = 'xiangjian@service0'
+ tunnel = ''
+ /
+ &MODULE
+ ID = 'ForW'
+ edited_by = 'xiangjian'
+ date = '24 Jun 2016  21:03'
+ version = u''
+ contact = '' 'xiangjian@hust.edu.cn'
+ /
+ &DEPENDENCIES
+ rho_t = 0.0 0.0666666666667 0.133333333333 0.2 0.266666666667 0.333333333333 
+ 0.4 0.466666666667 0.533333333333 0.6 0.666666666667 0.733333333333 0.8
+ n_imp = 1.54474298284 1.44977037243 1.27698421612 1.28802631648 
+ 1.25341808029 1.19676984938 1.14053303033 1.09740584652 1.06465247886 
+ 1.04953761356 1.03894238326 1.0252508832 1.0
+ /

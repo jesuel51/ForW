@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#PBS -q parallel11
+
+#PBS -N tgyro
+
+#PBS -l nodes=2:ppn=6
+#PBS -l walltime=10:00:00
+#PBS -j oe
+##PBS -o run.log
+#cd $PBS_O_WORKDIR
+
+cd $PBS_O_WORKDIR
+
+tgyro -e . -n 12

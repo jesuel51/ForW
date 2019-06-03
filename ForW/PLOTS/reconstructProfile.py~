@@ -1,0 +1,36 @@
+# this scripts is used to construct the impurities density profiles according to the D and V of each radius 
+ptgyro=root['SETTINGS']['PHYSICS']['ptgyro']
+n_pvt=root['SETTINGS']['PHYSICS']['n_pvt']
+a=root['INPUTS']['TGYRO']['input.profiles']['rmin'][-1] # minor radius
+radius=zeros(ptgyro)
+Darr=zeros(ptgyro)
+Varr=zeros(ptgyro)
+for k in range(1,ptgyro+1):
+    root['SETTINGS']['PHYSICS']['nscan']=k
+    root['PLOTS']['lincheck.py'].run()
+    radius[k-1]=root['OUTPUTS']['DV'][k]['radius']
+    Darr[k-1]=root['OUTPUTS']['DV'][k]['D']
+    Varr[k-1]=root['OUTPUTS']['DV'][k]['V']
+# let's construct the profiles
+VdD=Varr/Darr
+VdDmid=VdD[0:ptgyro-1]+VdD(1:ptgyro)
+Dr=zeros(ptgyro-1)
+ExpFct=zeros(ptgyro)
+n_imp=zeros(ptgyro)
+for k in range(0,tgyro-1):
+    Dr[k]=radius[k]-radius[k+1]
+    ExpFct[k+1]=VdDmid[k]*Dr[k]
+n_imp=exp(ExpFct)
+figure
+subplot(1,3,1)
+plot(radius,Darr,'-ro')
+xlabel('r/a')
+ylabel('D')
+subplot(1,3,2)
+plot(radius,Varr,'-bo')
+xlabel('r/a')
+ylabel('V')
+subplot(1,3,3)
+plot(radius,Varr/Darr,'-ro')
+xlabel('r/a')
+ylabel('V/D')

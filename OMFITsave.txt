@@ -1,0 +1,37 @@
+['ForW'] <-:-:-> OMFITmodule <-:-:->  <-:-:-> 
+['ForW']['INPUTS'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['INPUTS']['TGYRO'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['INPUTS']['TGYRO']['input.profiles'] <-:-:-> OMFITgaCode <-:-:-> ./ForW/INPUTS/TGYRO/input.profiles <-:-:-> {}
+['ForW']['INPUTS']['TGYRO']['input.tgyro'] <-:-:-> OMFITgaCode <-:-:-> ./ForW/INPUTS/TGYRO/input.tgyro <-:-:-> {}
+['ForW']['INPUTS']['TGYRO']['input.profiles.geo'] <-:-:-> OMFITgaCode <-:-:-> ./ForW/INPUTS/TGYRO/input.profiles.geo <-:-:-> {}
+['ForW']['INPUTS']['TGYRO']['jobtgyro.pbs'] <-:-:-> OMFITgaCode <-:-:-> ./ForW/INPUTS/TGYRO/jobtgyro.pbs_p12 <-:-:-> {}
+['ForW']['INPUTS']['TGYRO']['monitePBStgyro.sh'] <-:-:-> OMFITgaCode <-:-:-> ./ForW/INPUTS/TGYRO/monitePBStgyro.sh_p12 <-:-:-> {}
+['ForW']['OUTPUTS'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['OUTPUTS']['TGYRO'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['OUTPUTS']['TGLFScan'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['OUTPUTS']['NEOScan'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['OUTPUTS']['DV'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['SCRIPTS'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['SCRIPTS']['runTGYRO.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/SCRIPTS/runTGYRO.py <-:-:-> {}
+['ForW']['SCRIPTS']['scan.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/SCRIPTS/scan.py <-:-:-> {}
+['ForW']['SCRIPTS']['subscan.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/SCRIPTS/subscan.py <-:-:-> {}
+['ForW']['SCRIPTS']['MergeDT.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/SCRIPTS/mergeDT.py <-:-:-> {}
+['ForW']['SCRIPTS']['proctrl.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/SCRIPTS/proctrl.py <-:-:-> {}
+['ForW']['PLOTS'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['PLOTS']['lincheck_tur.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/PLOTS/lincheck_tur.py  <-:-:-> {}
+['ForW']['PLOTS']['lincheck_neo.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/PLOTS/lincheck_neo.py  <-:-:-> {}
+['ForW']['PLOTS']['lincheck.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/PLOTS/lincheck.py  <-:-:-> {}
+['ForW']['PLOTS']['reconstructProfile_tur.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/PLOTS/reconstructProfile_tur.py  <-:-:-> {}
+['ForW']['PLOTS']['reconstructProfile_neo.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/PLOTS/reconstructProfile_neo.py  <-:-:-> {}
+['ForW']['PLOTS']['reconstructProfile.py'] <-:-:-> OMFITpythonTask <-:-:-> ./ForW/PLOTS/reconstructProfile.py  <-:-:-> {}
+['ForW']['Cases'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['GUIS'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['IPS'] <-:-:-> OMFITtree <-:-:->  <-:-:-> {}
+['ForW']['SETTINGS'] <-:-:-> OMFITnamelist <-:-:-> ./ForW/SettingsNamelist.txt <-:-:-> {}
+['ForW']['SETTINGS']['SETUP']['workDir'] <-:-:-> OMFITexpression <-:-:-> _"OMFITworkDir(root,'')" <-:-:-> {}
+['ForW']['SETTINGS']['EXPERIMENT']['shot'] <-:-:-> OMFITexpression <-:-:-> _"try:\n    return_variable=OMFITmodules[-2]['SETTINGS']['EXPERIMENT']['shot']\nexcept:\n    return_variable=MainSettings['EXPERIMENT']['shot']\n" <-:-:-> {}
+['ForW']['SETTINGS']['EXPERIMENT']['time'] <-:-:-> OMFITexpression <-:-:-> _"try:\n    return_variable=OMFITmodules[-2]['SETTINGS']['EXPERIMENT']['time']\nexcept:\n    return_variable=MainSettings['EXPERIMENT']['time']\n" <-:-:-> {}
+['ForW']['SETTINGS']['EXPERIMENT']['device'] <-:-:-> OMFITexpression <-:-:-> _"try:\n    return_variable=OMFITmodules[-2]['SETTINGS']['EXPERIMENT']['device']\nexcept:\n    return_variable=MainSettings['EXPERIMENT']['device']\n" <-:-:-> {}
+['ForW']['SETTINGS']['EXPERIMENT']['shots'] <-:-:-> OMFITexpression <-:-:-> _"try:\n    return_variable=OMFITmodules[-2]['SETTINGS']['EXPERIMENT']['shots']\nexcept:\n    return_variable=MainSettings['EXPERIMENT']['shots']\n" <-:-:-> {}
+['ForW']['SETTINGS']['EXPERIMENT']['times'] <-:-:-> OMFITexpression <-:-:-> _"try:\n    return_variable=OMFITmodules[-2]['SETTINGS']['EXPERIMENT']['times']\nexcept:\n    return_variable=MainSettings['EXPERIMENT']['times']\n" <-:-:-> {}
+['ForW']['SETTINGS']['EXPERIMENT']['runid'] <-:-:-> OMFITexpression <-:-:-> _"try:\n    return_variable=OMFITmodules[-2]['SETTINGS']['EXPERIMENT']['runid']\nexcept:\n    return_variable=MainSettings['EXPERIMENT']['runid']\n" <-:-:-> {}

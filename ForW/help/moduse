@@ -1,0 +1,12 @@
+# this module is used to construct the density of trace level impurities .
+# in principle, it can be used to reconstruct the impurities profile based on both neoclassical and turbulent transport. But it seems that the neoclassical transport is not trustwothy, since the ambipolar relation is not always satisfied, and more importantly, impurities are outward even for zero density gradient, which is quite puzzling, besides, the impurities flux has a very weak dependence on the impurities density gradient
+# code usuage:
+setup=root['SETTINGS']['SETUP']
+setup['consflag']:
+0: impurities density profile reconstruction based on neoclassical transport;
+1: impurities density profile reconstruction based on turbulent transport;
+2: impurities density profile reconstruction based on both neoclassical and turbulent transport;
+setup['neoflag']:
+0: neoclassical transport is calculated by NEO
+1: neoclassical transport is calculated by nclass
+2: neoclassical transport is calculated by hirshman-sigma model

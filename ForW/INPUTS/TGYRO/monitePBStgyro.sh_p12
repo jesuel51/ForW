@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#pbsID=$(qsub /scratch/home/xiangjian/Documents/project/OMFIT-source/modules/ONETWO/FILES/job.pds)
+mkdir TGLF1
+touch TGLF1/input.tglf
+mkdir TGLF2
+touch TGLF2/input.tglf
+mkdir TGLF3
+touch TGLF3/input.tglf
+mkdir TGLF4
+touch TGLF4/input.tglf
+mkdir TGLF5
+touch TGLF5/input.tglf
+mkdir TGLF6
+touch TGLF6/input.tglf
+mkdir TGLF7
+touch TGLF7/input.tglf
+mkdir TGLF8
+touch TGLF8/input.tglf
+mkdir TGLF9
+touch TGLF9/input.tglf
+mkdir TGLF10
+touch TGLF10/input.tglf
+mkdir TGLF11
+touch TGLF11/input.tglf
+mkdir TGLF12
+touch TGLF12/input.tglf
